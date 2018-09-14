@@ -305,5 +305,39 @@
 		bgVideo();
 	});
 
+	$(function () {
+		$('#sendMessage').on("submit", function (e) {
+			$.ajax({
+				type: "POST", url: 'http://netlyt.com/mindpeek_signup/', 
+				data: { 'email': $('#email').val()}
+			}).then(function (response) {
+				if (response.success) {
+					$('#sendmessage').show();
+					$('#usercounter').html(
+						'<span>'+ response.count + ' <em>seats remaining</em></span>'
+					);
+					setTimeout(function() {
+						$("#sendmessage").hide('blind', {}, 500)
+					}, 5000);
+				}
+			},
+		  function(err){
+			$('#errormessage').html(err);
+			$('#errormessage').show();
+			setTimeout(function() {
+				$("#errormessage").hide('blind', {}, 500)
+			}, 5000);
+		  });
+			return false;
+		});
+	});
+
+	$( document ).ready(function() {
+		$.get( "http://netlyt.com/mindpeek_users/", function( data ) {
+			$('#usercounter').html(
+				'<span>'+ data.count + ' <em>seats remaining</em></span>'
+			);
+		  });
+	});
 
 }());

@@ -84,7 +84,6 @@
 
 		<section id="home" class="video-hero" style="height: 700px; background-image: url(images/cover_img_1.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
 		<div class="overlay"></div>
-			<a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=vqqt5p0q-eU',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a> 
 			<div class="display-t text-center">
 				<div class="display-tc">
 					<div class="container">
@@ -92,6 +91,11 @@
 							<div class="animate-box">
 								<h2>Peek into your user's mind</h2>
 								<p>with the MindPeek platform</p>
+								<div class="countdown-box" id="usercounter">
+									<span> 200 
+										<em>seats remaining</em>
+									</span>
+								</div>
 								<p><a href="#subscribe" class="btn btn-primary btn-lg btn-custom">Signup For Beta</a></p>
 							</div>
 						</div>
@@ -342,12 +346,15 @@
 						<h2>Ready to transform your application?</h2>
 						<p>Subscribe for the MindPeek beta.</p>
 					</div>
+				</div>					
 				</div>
 				<div class="row animate-box">
 					<div class="col-md-6 col-md-offset-3">
 						<div class="row">
 							<div class="col-md-12">
-							<form class="form-inline qbstp-header-subscribe">
+							<div class="alert alert-success" id="sendmessage" hidden>You've signed up for the MindPeek Beta. Thank you!</div>
+							<div class="alert alert-danger" id="errormessage" hidden></div>
+							<form class="form-inline qbstp-header-subscribe" id="sendMessage">
 								<div class="col-three-forth">
 									<div class="form-group">
 										<input type="text" class="form-control" id="email" placeholder="Enter your email">
@@ -520,6 +527,11 @@
 	<script src="js/jquery.countTo.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script>
+		function signUP(){
+
+		}
+	</script>
 
 	</body>
 </html>
